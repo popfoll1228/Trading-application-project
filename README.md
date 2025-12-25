@@ -28,6 +28,8 @@ B‧ 獲得結果：
 -計算機程式課程簡報
 -Tradinghero圖表
 -交易平臺開發之Metatrader 4 excel檔案
+-Chatgpt 指令(如(6))
 
 (6)程式修改或增強的內容
-1.指定排除特定時段：該時段內只進不出(2~9 GMT+8)-Chatgpt 指令：我需要找到在原本清單中datetime在(2,0)~(9,0)中的order，並從最後獲得的long_final_indices and short_final_indices 剔除。
+1.指定排除特定時段：該時段內只進不出(2~9 GMT+8)-
+Chatgpt 指令：我需要找到在原本清單中datetime在(2,0)~(9,0)中的order，並從最後獲得的long_final_indices and short_final_indices 剔除。
