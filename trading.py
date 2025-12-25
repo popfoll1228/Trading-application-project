@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from datetime import time
 
 #2_Read data [Day,Time,Open,High,Low,Close]
 txtname = input('Enter name of the data file: ') #USERINPUT
@@ -62,14 +63,28 @@ def intersection_indices(list1, list2):
     set2 = set(list2)
     return [i for i in list1 if i in set2]
 
+def remove_indices_in_time_range(indices, datalist, start_hour=2, start_minute=0, end_hour=9, end_minute=0):
+    start_time = time(start_hour, start_minute)
+    end_time   = time(end_hour, end_minute)
+    filtered = []
+    for i in indices:
+        t = datalist[i][1] 
+        if hasattr(t, 'time'):
+            t = t.time()
+        if not (start_time <= t <= end_time):
+            filtered.append(i)
+    return filtered
+
 long = long_order(datalist, nc, delta = 0.2)
 short = short_order(datalist, nc, delta = 0.2)
 osci = oscillate(datalist, ncc, delta = 0.03)
-long_final_indices = intersection_indices(long,osci)
-short_final_indices = intersection_indices(short,osci)
+long_indices = intersection_indices(long,osci)
+short_indices = intersection_indices(short,osci)
+long_final_indices = remove_indices_in_time_range(long_indices, datalist, start_hour=2, start_minute=0, end_hour=9, end_minute=0)
+short_final_indices = remove_indices_in_time_range(short_indices, datalist, start_hour=2, start_minute=0, end_hour=9, end_minute=0)
 print(len(long_final_indices))
 print(len(short_final_indices))
 
-#4
+#4 
 
 
