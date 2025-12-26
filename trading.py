@@ -206,6 +206,3 @@ print(longl)
 print(shortl)
 
 
-
-
-
