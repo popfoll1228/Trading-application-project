@@ -8,10 +8,16 @@
 
 (2)使用方式
 A‧ 使用者須準備、輸入以下數據：
-1.歷史數據的excel(.xlsx)文檔、名稱('Enter name of the data file: ')
-2.NC：與上漲/下跌程度有關，數字越小程度越猛烈('Bars for checking: ')
-3.NCC：與判定訂單有關，數字越大越嚴格判定('Bars for oscillate: ')
+1.歷史數據的excel(.xlsx)文檔、名稱
+2.NC：與上漲/下跌程度有關，數字越小程度越猛烈
+3.NCC：與判定訂單有關，數字越大越嚴格判定
 4.Margin：初始投資金額
+5.leverage：槓桿倍數
+6.ratio_max：TP-SL的最大比例(SL/TP)
+7.ratio_min：最小
+8.tp_max：最大單一單TP百分比
+9.tp_min：最小
+10.tim：每單最大等待時間
 B‧ 獲得結果：
 1.不同TP-SL比例的結果(金額、勝率)
 2.最好比例
@@ -21,6 +27,7 @@ B‧ 獲得結果：
 #1_Import：載入所需Python資料庫
 #2_Read data [Day,Time,Open,High,Low,Close]：讀取歷史數據
 #3 By data find order condition：獲得訂單在歷史數據中的編號(運算、取得交集)
+#4 Order to TP/SL, no more margin, certain period：決定訂單情形與不同盈利率、比例的計算
 
 (4)開發過程
 困難：將交易方法量化
