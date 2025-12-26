@@ -11,14 +11,16 @@ A‧ 使用者須準備、輸入以下數據：
 1.歷史數據的excel(.xlsx)文檔、名稱('Enter name of the data file: ')
 2.NC：與上漲/下跌程度有關，數字越小程度越猛烈('Bars for checking: ')
 3.NCC：與判定訂單有關，數字越大越嚴格判定('Bars for oscillate: ')
+4.Margin：初始投資金額
 B‧ 獲得結果：
-1.交易方法在此區間的勝率
-2.不同TP-SL比例的結果、最好比例、盈利/虧損程度圖表
+1.不同TP-SL比例的結果(金額、勝率)
+2.最好比例
+3.盈利/虧損程度圖表
 
 (3)程式的架構
 #1_Import：載入所需Python資料庫
 #2_Read data [Day,Time,Open,High,Low,Close]：讀取歷史數據
-#3 By data find order condition：獲得訂單在歷史數據中的編號
+#3 By data find order condition：獲得訂單在歷史數據中的編號(運算、取得交集)
 
 (4)開發過程
 困難：將交易方法量化
@@ -31,5 +33,5 @@ B‧ 獲得結果：
 -Chatgpt 指令(如(6))
 
 (6)程式修改或增強的內容
-1.指定排除特定時段：該時段內只進不出(2~9 GMT+8)-
+指定排除特定時段：該時段內只進不出(2~9 GMT+8)-
 Chatgpt 指令：我需要找到在原本清單中datetime在(2,0)~(9,0)中的order，並從最後獲得的long_final_indices and short_final_indices 剔除。
